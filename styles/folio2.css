@@ -1,0 +1,329 @@
+/* Hide specific Notion elements */
+.notion-super-badge,
+.notion-navbar,
+.notion-header,
+.notion-header__content,
+.notion-divider,
+.notion-toggle {
+  display: none !important;
+}
+
+/* Define custom font faces */
+@font-face {
+  font-family: "Radio Canada Big";
+  src: url("https://mattdowney.github.io/folio-2/fonts/RadioCanadaBig-VariableFont_wght.ttf") format("truetype");
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "General Sans";
+  src: url("https://mattdowney.github.io/digital/fonts/GeneralSans-Variable.woff2") format("woff2"),
+       url("https://mattdowney.github.io/digital/fonts/GeneralSans-Variable.woff") format("woff");
+  font-weight: 200 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* Define CSS variables */
+:root {
+  --font-regular: "General Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-bold: "Radio Canada Big", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-regular-weight: 380;
+  --font-bold-weight: 450;
+  --font-xs: 0.9875rem !important;
+  --font-small: 1.15rem !important;
+  --font-medium: 1.4rem !important;
+  --font-large: 2.5rem !important;
+  --color-black: 14, 15, 19;
+  --color-white: 247, 246, 251;
+}
+
+/* Apply global font and spacing styles */
+.notion * {
+  font-family: var(--font-regular) !important;
+  font-weight: var(--font-regular-weight) !important;
+  font-feature-settings: "liga" 1, "calt" 1 !important;
+  line-height: 1.4 !important;
+}
+
+/* Heading and link styles */
+.notion h1,
+.notion h2,
+.notion h3,
+.notion h4,
+.notion h5,
+.notion h6,
+.notion strong,
+.notion a {
+  font-family: var(--font-bold) !important;
+  font-weight: var(--font-bold-weight) !important;
+}
+
+/* Reset padding and margin */
+.notion html,
+.notion body,
+.notion h1,
+.notion h2,
+.notion h3,
+.notion p,
+.notion ul,
+.notion ol,
+.notion li {
+  padding: 0;
+  margin: 0;
+}
+
+/* Link styles */
+.notion a {
+  font-family: var(--font-bold) !important;
+  text-decoration: underline !important;
+}
+.notion a:hover {
+  text-decoration: none !important;
+}
+
+/* Heading sizes */
+.notion h1 {
+  font-size: var(--font-large) !important;
+  font-weight: var(--font-bold-weight) !important;
+  margin-bottom: 0.25rem !important;
+  line-height: 1 !important;
+}
+@media screen and (max-width: 768px) {
+  .notion h1 {
+    font-size: var(--font-medium) !important;
+  }
+}
+.notion h1 em {
+  font-style: normal !important;
+  font-weight: var(--font-bold-weight) !important;
+  opacity: 0.5 !important;
+}
+@media screen and (max-width: 768px) {
+  .notion h1 em {
+    display: block !important;
+    text-indent: 0 !important;
+  }
+}
+
+.notion h2 {
+  margin-top: 0 !important;
+  font-size: var(--font-medium) !important;
+  font-weight: var(--font-regular-weight) !important;
+}
+@media screen and (max-width: 768px) {
+  .notion h2 {
+    font-size: var(--font-small) !important;
+  }
+}
+.notion h2 a {
+  font-size: var(--font-medium) !important;
+  font-weight: var(--font-regular-weight) !important;
+}
+@media screen and (max-width: 768px) {
+  .notion h2 a {
+    font-size: var(--font-small) !important;
+  }
+}
+.notion h2 :first-child {
+  opacity: 0.7 !important;
+}
+
+.notion h3 {
+  font-size: var(--font-small) !important;
+}
+
+.notion .notion-collection__header {
+  display: none !important;
+}
+
+.notion .notion-heading {
+  padding: 0 !important;
+}
+
+.notion .notion-semantic-string .link {
+  opacity: 1 !important;
+}
+
+.notion iframe,
+.notion video,
+.notion img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Paragraph and list styles */
+.notion p,
+.notion a,
+.notion p a,
+.notion ul,
+.notion ul li {
+  margin-bottom: 1.5rem !important;
+  font-size: var(--font-small) !important;
+  line-height: 160% !important;
+}
+
+.notion p {
+  opacity: 0.7 !important;
+}
+
+.notion ul {
+  padding-inline-start: 1.2rem !important;
+}
+
+.notion ul li {
+  margin-bottom: 0.5rem !important;
+}
+
+/* Theme-specific styles */
+html.theme-dark .notion nav {
+  background: rgba(0, 0, 0, 0) !important;
+}
+
+html.theme-light .notion nav {
+  background: rgba(255, 255, 255, 0) !important;
+}
+
+/* Navbar styles */
+.notion .notion-navbar {
+  padding: 0 30px !important;
+}
+@media (max-width: 768px) {
+  .notion .notion-navbar {
+    padding: 0 !important;
+  }
+}
+
+.notion .notion-navbar__content {
+  background-color: rgba(0, 0, 0, 0) !important;
+  backdrop-filter: blur(10px) !important;
+  position: relative;
+}
+@media (max-width: 768px) {
+  .notion .notion-navbar__content {
+    width: 100% !important;
+    padding: 0 15px !important;
+  }
+}
+
+.notion .notion-navbar__content::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)) !important;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Specific navbar item styles */
+.notion .notion-navbar__logo {
+  margin-bottom: 0 !important;
+}
+
+.notion .notion-navbar__menu .notion-navigation-menu__items {
+  padding: 0 !important;
+}
+.notion .notion-navbar__menu .notion-navigation-menu__items a {
+  text-decoration: none !important;
+}
+
+/* Navbar item hover and active styles */
+.notion .notion-navigation-menu__item,
+.notion .notion-navigation-menu__list-header {
+  padding: 1rem 0 0 1rem !important;
+  gap: 0 !important;
+}
+.notion .notion-navigation-menu__item p,
+.notion .notion-navigation-menu__list-header p {
+  margin: 0 !important;
+}
+
+.notion .notion-navigation-menu__item.active,
+.notion .notion-navigation-menu__item:hover,
+.notion .notion-navigation-menu__list-header:hover {
+  background: none !important;
+}
+
+/* Collection card styles */
+.notion .notion-collection-gallery {
+  border-top: none !important;
+  grid-gap: 2.5rem !important;
+}
+
+.notion .notion-collection-card {
+  box-shadow: none !important;
+  transition: transform 450ms !important;
+  transform: translateY(0rem) !important;
+  padding-bottom: 1rem !important;
+}
+.notion .notion-collection-card:hover {
+  transition: transform 180ms !important;
+  transform: translateY(-1.1rem) !important;
+}
+
+/* Gallery card layout adjustments */
+.notion .notion-collection-gallery.large {
+  grid-template-columns: repeat(2, 1fr) !important;
+  margin-top: 2rem !important;
+  margin-bottom: 6rem !important;
+}
+@media (max-width: 768px) {
+  .notion .notion-collection-gallery.large {
+    margin-top: 1rem !important;
+    margin-bottom: 3rem !important;
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Pill styles based on theme */
+html.theme-light .notion .notion-pill {
+  background: rgba(var(--color-black), 0.075) !important;
+  color: rgba(var(--color-black), 1) !important;
+}
+
+html.theme-dark .notion .notion-pill {
+  background: rgba(var(--color-white), 0.1) !important;
+  color: rgba(var(--color-white), 1) !important;
+}
+
+/* Footer styles */
+.notion .notion-footer.stack,
+.notion .notion-footer.corners {
+  padding-left: 47px !important;
+  padding-right: 47px !important;
+}
+@media (max-width: 768px) {
+  .notion .notion-footer.stack,
+  .notion .notion-footer.corners {
+    padding-top: 40px !important;
+    padding-bottom: 40px !important;
+    padding-left: 30px !important;
+    padding-right: 30px !important;
+  }
+}
+
+/* Footer link styles */
+.notion .notion-footer__links {
+  margin-bottom: 0 !important;
+}
+@media (max-width: 768px) {
+  .notion .notion-footer__links {
+    gap: 0 !important;
+    margin-bottom: 1rem !important;
+  }
+}
+.notion .notion-footer__links a {
+  text-decoration: none !important;
+  font-family: var(--font-bold) !important;
+  font-weight: 500 !important;
+  font-size: var(--font-xs) !important;
+  opacity: 0.5 !important;
+  transition: all 0.2s ease-in-out !important;
+}
+.notion .notion-footer__links a:hover {
+  opacity: 1 !important;
+}
